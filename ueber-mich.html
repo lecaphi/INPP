@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Anja le Campion</title>
+    <style>
+        :root {
+            --primary: #2c5e8a; 
+            --secondary: #6e9a75; 
+            --dark: #2d3748;
+            --light: #f7fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { color: var(--dark); background-color: #ffffff; line-height: 1.7; }
+        header { background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 25px 20px; }
+        .logo h1 { font-size: 26px; font-weight: 400; color: var(--primary); }
+        .logo span { font-size: 13px; display: block; color: var(--secondary); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav a { text-decoration: none; color: var(--dark); font-size: 15px; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; display: flex; gap: 50px; align-items: center; }
+        .about-image { width: 280px; height: 280px; background-color: #e2e8f0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #718096; font-size: 14px; flex-shrink: 0; object-fit: cover; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        .about-text h2 { color: var(--primary); font-size: 26px; font-weight: 400; margin-bottom: 20px; }
+        footer { background-color: var(--dark); color: #a0aec0; text-align: center; padding: 30px 20px; margin-top: 80px; }
+        .footer-text { font-size: 14px; }
+        .footer-links { font-size: 11px; margin-top: 10px; display: block; opacity: 0.7; }
+        .footer-links a { color: #a0aec0; text-decoration: none; margin: 0 8px; }
+        @media (max-width: 768px) { .container { flex-direction: column; text-align: center; } .nav-container { flex-direction: column; gap: 20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Praxis Anja le Campion</h1>
+                <span>Pädagogische Entwicklungs- & Lernförderung</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="ueber-mich.html">Über mich</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <img src="profilbild.jpg" alt="Anja le Campion" class="about-image" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
+        <div id="placeholder" class="about-image" style="display:none;">Foto Platzhalter (z. B. profilbild.jpg)</div>
+        
+        <div class="about-text">
+            <h2>Über mich</h2>
+            <p>Mein Name ist <strong>Anja le Campion</strong>. Als zertifizierte <strong>INPP International Licentiate</strong> habe ich mich voll und ganz auf das Erkennen und Beheben von tiefer liegenden Entwicklungsursachen spezialisiert. Mein Ziel ist es, Menschen jeden Alters – vom Kleinkind bis zum Erwachsenen – zu mehr Leichtigkeit, Stabilität und Freude in ihrem Alltag zu verhelfen.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">&copy; 2026 Praxis Anja le Campion</p>
+        <span class="footer-links">
+            <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+        </span>
+    </footer>
+</body>
+</html>

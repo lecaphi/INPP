@@ -6,275 +6,44 @@
     <title>Praxis Anja le Campion | INPP Neuromotorische Entwicklungsförderung</title>
     <style>
         :root {
-            --primary: #2c5e8a; /* Elegantes Praxis-Blau */
-            --secondary: #6e9a75; /* Beruhigendes Salbei-Grün */
+            --primary: #2c5e8a; 
+            --secondary: #6e9a75; 
             --dark: #2d3748;
             --light: #f7fafc;
-            --accent: #e2e8f0;
             --danger: #e53e3e;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        body {
-            color: var(--dark);
-            background-color: #ffffff;
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background-color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 20px;
-        }
-
-        .logo h1 {
-            font-size: 26px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: var(--primary);
-        }
-
-        .logo span {
-            font-size: 13px;
-            display: block;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 4px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        .alert-banner {
-            background-color: var(--danger);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .hero {
-            background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 38px;
-            font-weight: 300;
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            font-size: 19px;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #4a5568;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 400;
-            color: var(--primary);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary);
-            margin: 15px auto 0 auto;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: var(--light);
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-        }
-
-        .card h3 {
-            margin-bottom: 20px;
-            color: var(--primary);
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        /* Methoden-Vorstellung im Pappert-Stil */
-        .method-block {
-            margin-top: 40px;
-            padding: 50px;
-            border-radius: 4px;
-            background-color: #f7fafc;
-            border-top: 3px solid var(--secondary);
-        }
-
-        .method-block h3 {
-            color: var(--primary);
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-        .method-link {
-            color: var(--secondary);
-            font-weight: bold;
-            text-decoration: none;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { color: var(--dark); background-color: #ffffff; line-height: 1.7; }
+        header { background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 25px 20px; }
+        .logo h1 { font-size: 26px; font-weight: 400; color: var(--primary); }
+        .logo span { font-size: 13px; display: block; color: var(--secondary); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav a { text-decoration: none; color: var(--dark); font-size: 15px; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        .alert-banner { background-color: var(--danger); color: white; text-align: center; padding: 12px; font-weight: 600; font-size: 14px; }
+        .hero { background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%); padding: 100px 20px; text-align: center; }
+        .hero h2 { font-size: 38px; font-weight: 300; color: var(--primary); margin-bottom: 25px; }
+        .hero p { font-size: 19px; max-width: 800px; margin: 0 auto; color: #4a5568; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; font-size: 28px; font-weight: 400; color: var(--primary); margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
+        .card { background: var(--light); padding: 40px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .card h3 { margin-bottom: 20px; color: var(--primary); font-size: 20px; }
+        .method-block { margin-top: 40px; padding: 50px; border-radius: 4px; background-color: #f7fafc; border-top: 3px solid var(--secondary); }
+        .method-link { color: var(--secondary); font-weight: bold; text-decoration: none; }
         
-        .method-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Über mich Bereich */
-        .about-section {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-top: 80px;
-            padding: 40px 0;
-        }
-
-        .about-image {
-            width: 280px;
-            height: 280px;
-            background-color: #e2e8f0;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #718096;
-            font-size: 14px;
-            flex-shrink: 0;
-            object-fit: cover;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-        }
-
-        .about-text h2 {
-            color: var(--primary);
-            font-size: 26px;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .info-section {
-            margin-top: 80px;
-            padding: 50px 0;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .law-box {
-            background-color: var(--light);
-            padding: 40px;
-            border-radius: 4px;
-            margin-top: 25px;
-        }
-
-        .law-box h4 {
-            color: var(--primary);
-            margin-top: 25px;
-            margin-bottom: 8px;
-        }
-
-        .contact-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: #a0aec0;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 14px;
-            margin-top: 80px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .method-block {
-                padding: 30px;
-            }
-        }
+        /* Sehr dezenter, kleiner Fußbereich */
+        footer { background-color: var(--dark); color: #a0aec0; text-align: center; padding: 30px 20px; margin-top: 80px; }
+        .footer-text { font-size: 14px; }
+        .footer-links { font-size: 11px; margin-top: 10px; display: block; opacity: 0.7; }
+        .footer-links a { color: #a0aec0; text-decoration: none; margin: 0 8px; }
+        .footer-links a:hover { color: white; text-decoration: underline; }
+        
+        @media (max-width: 768px) { .nav-container { flex-direction: column; gap: 20px; } nav ul { flex-wrap: wrap; justify-content: center; } }
     </style>
 </head>
 <body>
-
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -283,12 +52,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Startseite</a></li>
-                    <li><a href="#schwerpunkte">Förderangebote</a></li>
-                    <li><a href="#methoden">INPP-Methode</a></li>
-                    <li><a href="#ueber-mich">Über mich</a></li>
-                    <li><a href="#impressum-section">Impressum</a></li>
-                    <li><a href="#datenschutz-section">Datenschutz</a></li>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="ueber-mich.html">Über mich</a></li>
                 </ul>
             </nav>
         </div>
@@ -298,15 +63,13 @@
         ⚠️ HINWEIS: Diese Seite befindet sich im Aufbau. Noch sind nicht alle Angaben korrekt! (Under construction)
     </div>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <h2>Wege zu freierer Entwicklung finden</h2>
         <p>Lernprobleme, Verhaltensauffälligkeiten oder motorische Unsicherheiten haben oft eine tiefere neurophysiologische Ursache. Die INPP-Methode setzt genau hier an, um Blockaden von Grund auf zu lösen.</p>
     </section>
 
     <main class="container">
-        
-        <!-- INPP-FÖRDERANGEBOTE -->
-        <section id="schwerpunkte">
+        <section>
             <h2 class="section-title">Meine INPP-Förderangebote</h2>
             <div class="grid">
                 <div class="card">
@@ -324,10 +87,21 @@
             </div>
         </section>
 
-        <!-- METHODEN-VORSTELLUNG -->
-        <section id="methoden">
+        <section style="margin-top: 60px;">
             <h2 class="section-title">Die INPP®-Methode</h2>
-            
             <div class="method-block">
                 <h3>Neuromotorische Entwicklungsförderung</h3>
                 <p>Das INPP-Förderprogramm basiert auf einem individuell maßgeschneiderten, häuslichen Bewegungsprogramm. Es zielt darauf ab, noch aktive frühkindliche Reflexe nachträglich zu hemmen und vollständig zu integrieren. Dadurch stärken wir das neurophysiologische Fundament, welches für entspanntes Lernen, ausgeglichenes Verhalten und emotionale Stabilität notwendig ist.</p>
+                <p style="margin-top: 15px;">Vertiefende Informationen auf der offiziellen Homepage: <a href="https://inpp.de" target="_blank" class="method-link">www.inpp.de</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">&copy; 2026 Praxis Anja le Campion</p>
+        <span class="footer-links">
+            <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+        </span>
+    </footer>
+</body>
+</html>
