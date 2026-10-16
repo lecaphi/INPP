@@ -24,6 +24,7 @@
             color: var(--dark);
             background-color: #ffffff;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -52,6 +53,7 @@
             font-size: 14px;
             display: block;
             color: #777;
+            margin-top: 2px;
         }
 
         nav ul {
@@ -122,6 +124,63 @@
             color: var(--primary);
         }
 
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 60px;
+            background: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .about-image {
+            width: 250px;
+            height: 250px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            flex-shrink: 0;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .info-section {
+            margin-top: 60px;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+
+        /* Übersichtlich gestaltete Kontakt-Box */
+        .contact-box {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+            max-width: 600px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background-color: var(--dark);
             color: white;
@@ -149,6 +208,10 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -158,7 +221,7 @@
         <div class="nav-container">
             <div class="logo">
                 <h1>INPP le Campion</h1>
-                <span>Neuromotorische Entwicklungsförderung Kinder und Erwachsene </span>
+                <span>Neuromotorische Entwicklungsförderung Kinder und Erwachsene</span>
             </div>
             <nav>
                 <ul>
@@ -205,15 +268,43 @@
             <p>Seit 2020 biete ich in meiner Praxis diese Methode an. Sie ergänzt mein Behandlungsspektrum ideal, da mittels INPP Lernprobleme und Verhaltensauffälligkeiten sehr effektiv von Grund auf behandelt werden können.</p>
             <p style="margin-top: 10px;">Für weitere Informationen verweise ich auf die Homepage von INPP-Deutschland: <a href="https://inpp.de" target="_blank" style="color: #16a34a; font-weight: bold;">www.inpp.de</a></p>
         </section>
+
+        <section id="ueber-mich" class="about-section">
+            <img src="profilbild.jpg" alt="Anja le Campion" class="about-image" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
+            <div id="placeholder" class="about-image" style="display:none;">Foto Platzhalter</div>
+            
+            <div class="about-text">
+                <h2>Über mich</h2>
+                <p>Mein Name ist <strong>Anja le Campion</strong>. Als Lerntherapeutin und Ergotherapeutin begleite ich Kinder und Jugendliche dabei, Blockaden zu lösen und die Freude am Lernen wiederzuentdecken. Jedes Kind bringt seine eigenen Stärken mit – diese gilt es gezielt zu nutzen und auszubauen.</p>
+            </div>
+        </section>
+
+        <!-- KLARE UND EINFACHE KONTAKT-BOX -->
+        <section id="kontakt" class="info-section">
+            <h2>Kontakt & Impressum</h2>
+            
+            <div class="contact-box">
+                <p><strong>Anbieterin dieser Website:</strong></p>
+                <p style="margin-bottom: 20px;">
+                    Anja le Campion<br>
+                    Uhlenkamp 7<br>
+                    38536 Meinersen
+                </p>
+                
+                <p><strong>So erreichen Sie mich direkt:</strong></p>
+                <p>Telefon: <a href="tel:0162000000" class="contact-link">0162000000</a></p>
+                <p>E-Mail: <a href="mailto:AnjaRebekka@....de" class="contact-link">AnjaRebekka@....de</a></p>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Lerntherapie Anja le Campion</p>
-        <p style="margin-top: 15px;">
-            <a href="#impressum">Impressum</a> | 
-            <a href="#datenschutz">Datenschutz</a>
+        <p style="margin-top: 15px; font-size: 14px;">
+            <a href="#kontakt">Impressum</a> | <a href="#kontakt">Datenschutz</a>
         </p>
     </footer>
 
 </body>
 </html>
+
