@@ -3,70 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INPP | Anja le Campion</title>
+    <title>Praxis Anja le Campion | INPP Neuromotorische Entwicklungsförderung</title>
     <style>
         :root {
-            --primary: #4a90e2;
-            --secondary: #f5a623;
-            --dark: #333333;
-            --light: #f9f9f9;
-            --danger: #d9534f;
+            --primary: #2c5e8a; /* Elegantes Praxis-Blau */
+            --secondary: #6e9a75; /* Beruhigendes Salbei-Grün */
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --accent: #e2e8f0;
+            --danger: #e53e3e;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
             color: var(--dark);
             background-color: #ffffff;
-            line-height: 1.6;
+            line-height: 1.7;
             scroll-behavior: smooth;
         }
 
         header {
             background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 25px 20px;
         }
 
         .logo h1 {
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: 1px;
             color: var(--primary);
         }
 
         .logo span {
-            font-size: 14px;
+            font-size: 13px;
             display: block;
-            color: #777;
-            margin-top: 2px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
-            transition: color 0.3s;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
         nav a:hover {
@@ -77,104 +83,160 @@
             background-color: var(--danger);
             color: white;
             text-align: center;
-            padding: 15px;
-            font-weight: bold;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 14px;
         }
 
         .hero {
-            background: linear-gradient(135deg, #e0f2fe 0%, #ffedd5 100%);
-            padding: 80px 20px;
+            background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+            padding: 100px 20px;
             text-align: center;
         }
 
         .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--dark);
+            font-size: 38px;
+            font-weight: 300;
+            color: var(--primary);
+            margin-bottom: 25px;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 19px;
             max-width: 800px;
             margin: 0 auto;
+            color: #4a5568;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+            margin: 15px auto 0 auto;
+        }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
         }
 
         .card {
             background: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 5px solid var(--primary);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
         }
 
         .card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: var(--primary);
+            font-size: 20px;
+            font-weight: 500;
         }
 
+        /* Methoden-Vorstellung im Pappert-Stil */
+        .method-block {
+            margin-top: 40px;
+            padding: 50px;
+            border-radius: 4px;
+            background-color: #f7fafc;
+            border-top: 3px solid var(--secondary);
+        }
+
+        .method-block h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .method-link {
+            color: var(--secondary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .method-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Über mich Bereich */
         .about-section {
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-top: 60px;
-            background: var(--light);
-            padding: 40px;
-            border-radius: 8px;
+            gap: 50px;
+            margin-top: 80px;
+            padding: 40px 0;
         }
 
         .about-image {
-            width: 250px;
-            height: 250px;
-            background-color: #ddd;
-            border-radius: 50%;
+            width: 280px;
+            height: 280px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #666;
+            color: #718096;
+            font-size: 14px;
             flex-shrink: 0;
-            border: 5px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             object-fit: cover;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
 
         .about-text h2 {
             color: var(--primary);
-            margin-bottom: 15px;
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 20px;
         }
 
         .info-section {
-            margin-top: 60px;
-            padding: 40px 0;
-            border-top: 1px solid #eee;
+            margin-top: 80px;
+            padding: 50px 0;
+            border-top: 1px solid #e2e8f0;
         }
 
-        /* Übersichtlich gestaltete Kontakt-Box */
-        .contact-box {
+        .law-box {
             background-color: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 20px;
-            max-width: 600px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 40px;
+            border-radius: 4px;
+            margin-top: 25px;
+        }
+
+        .law-box h4 {
+            color: var(--primary);
+            margin-top: 25px;
+            margin-bottom: 8px;
         }
 
         .contact-link {
             color: var(--primary);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .contact-link:hover {
@@ -183,34 +245,30 @@
 
         footer {
             background-color: var(--dark);
-            color: white;
+            color: #a0aec0;
             text-align: center;
             padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: white;
+            font-size: 14px;
+            margin-top: 80px;
         }
 
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
+                text-align: center;
             }
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 15px;
             }
             .about-section {
                 flex-direction: column;
                 text-align: center;
+            }
+            .method-block {
+                padding: 30px;
             }
         }
     </style>
@@ -220,91 +278,56 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <h1>INPP le Campion</h1>
-                <span>Neuromotorische Entwicklungsförderung Kinder und Erwachsene</span>
+                <h1>Praxis Anja le Campion</h1>
+                <span>Pädagogische Entwicklungs- & Lernförderung</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Startseite</a></li>
-                    <li><a href="#angebot">Ich biete</a></li>
-                    <li><a href="#inpp">INPP-Förderung</a></li>
+                    <li><a href="#schwerpunkte">Förderangebote</a></li>
+                    <li><a href="#methoden">INPP-Methode</a></li>
                     <li><a href="#ueber-mich">Über mich</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#impressum-section">Impressum</a></li>
+                    <li><a href="#datenschutz-section">Datenschutz</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="alert-banner">
-        ⚠️ HINWEIS:  ⚠️ HINWEIS: Diese Seite befindet sich im Aufbau. Noch sind nicht alle Angaben korrekt! (Under construction)
+        ⚠️ HINWEIS: Diese Seite befindet sich im Aufbau. Noch sind nicht alle Angaben korrekt! (Under construction)
     </div>
 
     <section id="home" class="hero">
-        <h2>Herzlich willkommen!</h2>
-        <p>Schule kann für viel Frust sorgen – Lernen kann aber auch Spaß bringen! Integrative Lerntherapie verhilft Kindern anders und interessanter wieder zu Erfolgserlebnissen, wenn klassisches Üben und Nachhilfe nicht mehr weiterhelfen.</p>
+        <h2>Wege zu freierer Entwicklung finden</h2>
+        <p>Lernprobleme, Verhaltensauffälligkeiten oder motorische Unsicherheiten haben oft eine tiefere neurophysiologische Ursache. Die INPP-Methode setzt genau hier an, um Blockaden von Grund auf zu lösen.</p>
     </section>
 
     <main class="container">
-        <section id="angebot">
-            <h2 style="text-align: center;">Mein Behandlungsangebot</h2>
+        
+        <!-- INPP-FÖRDERANGEBOTE -->
+        <section id="schwerpunkte">
+            <h2 class="section-title">Meine INPP-Förderangebote</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Lerntherapie</h3>
-                    <p>Individuelle Förderung bei Legasthenie (Lese-Rechtschreib-Schwäche), Dyskalkulie (Rechenschwäche) und allgemeinen Lernstörungen.</p>
+                    <h3>INPP für Kinder & Jugendliche</h3>
+                    <p>Effektive Unterstützung bei Schulschwierigkeiten, Konzentrations- und Aufmerksamkeitsstörungen (ADS/ADHS), Lese-Rechtschreib-Schwäche (Legasthenie) oder Rechenschwäche (Dyskalkulie).</p>
                 </div>
                 <div class="card">
-                    <h3>Vorschulalter</h3>
-                    <p>Frühzeitige Unterstützung und Förderung von Basiskompetenzen, um den Schulstart erfolgreich zu meistern.</p>
+                    <h3>INPP für Erwachsene</h3>
+                    <p>Gezielte Hilfestellung bei fortbestehenden neuromotorischen Unreifen, Gleichgewichtsproblemen, Koordinationsschwierigkeiten, erhöhter Stressanfälligkeit oder innerer Unruhe im Alltag.</p>
                 </div>
                 <div class="card">
-                    <h3>Konzentration & Motorik</h3>
-                    <p>Gezielte Hilfe bei Konzentrationsstörungen (ADS/ADHS) sowie Einschränkungen in der Feinmotorik.</p>
+                    <h3>Programme für Einrichtungen</h3>
+                    <p>Fachliche Begleitung, Beratung und Betreuung von neuromotorischen Programmen in Schulen, Kindergärten und anderen pädagogischen Einrichtungen.</p>
                 </div>
             </div>
         </section>
 
-        <section id="inpp" style="margin-top: 60px; background: #f0fdf4; padding: 40px; border-radius: 8px;">
-            <h2 style="color: #16a34a; margin-bottom: 15px;">INPP-neuromotorische Entwicklungsförderung</h2>
-            <p>Seit 2020 biete ich in meiner Praxis diese Methode an. Sie ergänzt mein Behandlungsspektrum ideal, da mittels INPP Lernprobleme und Verhaltensauffälligkeiten sehr effektiv von Grund auf behandelt werden können.</p>
-            <p style="margin-top: 10px;">Für weitere Informationen verweise ich auf die Homepage von INPP-Deutschland: <a href="https://inpp.de" target="_blank" style="color: #16a34a; font-weight: bold;">www.inpp.de</a></p>
-        </section>
-
-        <section id="ueber-mich" class="about-section">
-            <img src="profilbild.jpg" alt="Anja le Campion" class="about-image" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
-            <div id="placeholder" class="about-image" style="display:none;">Foto Platzhalter</div>
+        <!-- METHODEN-VORSTELLUNG -->
+        <section id="methoden">
+            <h2 class="section-title">Die INPP®-Methode</h2>
             
-            <div class="about-text">
-                <h2>Über mich</h2>
-                <p>Mein Name ist <strong>Anja le Campion</strong>. Als Lerntherapeutin und Ergotherapeutin begleite ich Kinder und Jugendliche dabei, Blockaden zu lösen und die Freude am Lernen wiederzuentdecken. Jedes Kind bringt seine eigenen Stärken mit – diese gilt es gezielt zu nutzen und auszubauen.</p>
-            </div>
-        </section>
-
-        <!-- KLARE UND EINFACHE KONTAKT-BOX -->
-        <section id="kontakt" class="info-section">
-            <h2>Kontakt & Impressum</h2>
-            
-            <div class="contact-box">
-                <p><strong>Anbieterin dieser Website:</strong></p>
-                <p style="margin-bottom: 20px;">
-                    Anja le Campion<br>
-                    Uhlenkamp 7<br>
-                    38536 Meinersen
-                </p>
-                
-                <p><strong>So erreichen Sie mich direkt:</strong></p>
-                <p>Telefon: <a href="tel:0162000000" class="contact-link">0162000000</a></p>
-                <p>E-Mail: <a href="mailto:AnjaRebekka@....de" class="contact-link">AnjaRebekka@....de</a></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Lerntherapie Anja le Campion</p>
-        <p style="margin-top: 15px; font-size: 14px;">
-            <a href="#kontakt">Impressum</a> | <a href="#kontakt">Datenschutz</a>
-        </p>
-    </footer>
-
-</body>
-</html>
-
+            <div class="method-block">
+                <h3>Neuromotorische Entwicklungsförderung</h3>
+                <p>Das INPP-Förderprogramm basiert auf einem individuell maßgeschneiderten, häuslichen Bewegungsprogramm. Es zielt darauf ab, noch aktive frühkindliche Reflexe nachträglich zu hemmen und vollständig zu integrieren. Dadurch stärken wir das neurophysiologische Fundament, welches für entspanntes Lernen, ausgeglichenes Verhalten und emotionale Stabilität notwendig ist.</p>
