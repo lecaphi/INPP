@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lerntherapie Appen | Melanie Straub</title>
+    <title>INPP | Anja le Campion</title>
     <style>
         :root {
             --primary: #4a90e2;
@@ -157,8 +157,8 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <h1>Lerntherapie Appen</h1>
-                <span>Melanie Straub – Lerntherapeutin & Ergotherapeutin</span>
+                <h1>INPP le Campion</h1>
+                <span>Neuromotorische Entwicklungsförderung Kinder und Erwachsene </span>
             </div>
             <nav>
                 <ul>
