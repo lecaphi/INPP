@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPP | Anja le Campion</title>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #f5a623;
+            --dark: #333333;
+            --light: #f9f9f9;
+            --danger: #d9534f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .logo span {
+            font-size: 14px;
+            display: block;
+            color: #777;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .alert-banner {
+            background-color: var(--danger);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e0f2fe 0%, #ffedd5 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>INPP le Campion</h1>
+                <span>Neuromotorische Entwicklungsförderung Kinder und Erwachsene </span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Startseite</a></li>
+                    <li><a href="#angebot">Ich biete</a></li>
+                    <li><a href="#inpp">INPP-Förderung</a></li>
+                    <li><a href="#ueber-mich">Über mich</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="alert-banner">
+        ⚠️ HINWEIS: Aufgrund einer vollen Warteliste kann ich derzeit leider keine weiteren Lerntherapiekinder aufnehmen.
+    </div>
+
+    <section id="home" class="hero">
+        <h2>Herzlich willkommen!</h2>
+        <p>Schule kann für viel Frust sorgen – Lernen kann aber auch Spaß bringen! Integrative Lerntherapie verhilft Kindern anders und interessanter wieder zu Erfolgserlebnissen, wenn klassisches Üben und Nachhilfe nicht mehr weiterhelfen.</p>
+    </section>
+
+    <main class="container">
+        <section id="angebot">
+            <h2 style="text-align: center;">Mein Behandlungsangebot</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Lerntherapie</h3>
+                    <p>Individuelle Förderung bei Legasthenie (Lese-Rechtschreib-Schwäche), Dyskalkulie (Rechenschwäche) und allgemeinen Lernstörungen.</p>
+                </div>
+                <div class="card">
+                    <h3>Vorschulalter</h3>
+                    <p>Frühzeitige Unterstützung und Förderung von Basiskompetenzen, um den Schulstart erfolgreich zu meistern.</p>
+                </div>
+                <div class="card">
+                    <h3>Konzentration & Motorik</h3>
+                    <p>Gezielte Hilfe bei Konzentrationsstörungen (ADS/ADHS) sowie Einschränkungen in der Feinmotorik.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inpp" style="margin-top: 60px; background: #f0fdf4; padding: 40px; border-radius: 8px;">
+            <h2 style="color: #16a34a; margin-bottom: 15px;">INPP-neuromotorische Entwicklungsförderung</h2>
+            <p>Seit 2020 biete ich in meiner Praxis diese Methode an. Sie ergänzt mein Behandlungsspektrum ideal, da mittels INPP Lernprobleme und Verhaltensauffälligkeiten sehr effektiv von Grund auf behandelt werden können.</p>
+            <p style="margin-top: 10px;">Für weitere Informationen verweise ich auf die Homepage von INPP-Deutschland: <a href="https://inpp.de" target="_blank" style="color: #16a34a; font-weight: bold;">www.inpp.de</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lerntherapie Anja le Campion</p>
+        <p style="margin-top: 15px;">
+            <a href="#impressum">Impressum</a> | 
+            <a href="#datenschutz">Datenschutz</a>
+        </p>
+    </footer>
+
+</body>
+</html>
