@@ -3,156 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praxis Anja le Campion | INPP Neuromotorische Entwicklungsförderung</title>
+    <title>Neuromotorische Entwicklungsförderung nach INPP ® | Anja le Campion</title>
     <style>
         :root {
-            --primary: #2c5e8a; 
-            --secondary: #6e9a75; 
-            --dark: #2d3748;
-            --light: #f7fafc;
-            --danger: #e53e3e;
+            --primary-color: #1a365d; /* INPP Dunkelblau */
+            --secondary-color: #718096; /* INPP Grau */
+            --light-bg: #f7fafc;
+            --text-color: #2d3748;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
-        body { color: var(--dark); background-color: #ffffff; line-height: 1.7; }
-        header { background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 25px 20px; }
-        .logo h1 { font-size: 26px; font-weight: 400; color: var(--primary); }
-        .logo span { font-size: 13px; display: block; color: var(--secondary); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav a { text-decoration: none; color: var(--dark); font-size: 15px; font-weight: 500; }
-        nav a:hover { color: var(--primary); }
-        .alert-banner { background-color: var(--danger); color: white; text-align: center; padding: 12px; font-weight: 600; font-size: 14px; }
-        .hero { background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%); padding: 100px 20px; text-align: center; }
-        .hero h2 { font-size: 38px; font-weight: 300; color: var(--primary); margin-bottom: 25px; }
-        .hero p { font-size: 19px; max-width: 800px; margin: 0 auto; color: #4a5568; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .section-title { text-align: center; font-size: 28px; font-weight: 400; color: var(--primary); margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
-        .card { background: var(--light); padding: 40px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .card h3 { margin-bottom: 20px; color: var(--primary); font-size: 20px; }
-        .method-block { margin-top: 40px; padding: 50px; border-radius: 4px; background-color: #f7fafc; border-top: 3px solid var(--secondary); }
-        .method-link { color: var(--secondary); font-weight: bold; text-decoration: none; }
         
-        /* Sehr dezenter, kleiner Fußbereich */
-        footer { background-color: var(--dark); color: #a0aec0; text-align: center; padding: 30px 20px; margin-top: 80px; }
-        .footer-text { font-size: 14px; }
-        .footer-links { font-size: 11px; margin-top: 10px; display: block; opacity: 0.7; }
-        .footer-links a { color: #a0aec0; text-decoration: none; margin: 0 8px; }
-        .footer-links a:hover { color: white; text-decoration: underline; }
-        
-        @media (max-width: 768px) { .nav-container { flex-direction: column; gap: 20px; } nav ul { flex-wrap: wrap; justify-content: center; } }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        /* Kopfbereich: Titel links, Navigation & Logo rechts */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .header-title h1 { 
+            color: var(--primary-color); 
+            margin: 0 0 5px 0;
+        }
+
+        .header-title .subtitle { 
+            font-style: italic; 
+            color: var(--secondary-color); 
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Rechte Menü- und Logoseite */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Logo-Größeneinstellung */
+        .inpp-logo {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .alert-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        /* Styling für die ausklappbaren Balken */
+        .accordion-item {
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            width: 100%;
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            text-align: left;
+            padding: 18px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #edf2f7;
+        }
+
+        .accordion-button::after {
+            content: '▼';
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            transition: transform 0.2s;
+        }
+
+        .accordion-button.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #ffffff;
+        }
+
+        .accordion-body {
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .accordion-body h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-body ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .accordion-body li {
+            margin-bottom: 12px;
+        }
+
+        .cta-box {
+            background-color: var(--light-bg);
+            border: 1px dashed var(--primary-color);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* Mobil-Optimierung */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .header-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="nav-container">
-            <div class="logo">
-                <h1>Praxis Anja le Campion</h1>
-                <span>Pädagogische Entwicklungs- & Lernförderung</span>
-            </div>
+        <div class="header-title">
+            <h1>Anja le Campion</h1>
+            <p class="subtitle">Neuromotorische Entwicklungsförderung nach INPP ®</p>
+        </div>
+        <div class="header-right">
             <nav>
                 <ul>
                     <li><a href="index.html">Startseite</a></li>
                     <li><a href="ueber-mich.html">Über mich</a></li>
                 </ul>
             </nav>
+            <img src="inpp-logo.png" alt="INPP Deutschland Logo" class="inpp-logo">
         </div>
     </header>
 
-    <div class="alert-banner">
-        ⚠️ HINWEIS: Diese Seite befindet sich im Aufbau. Noch sind nicht alle Angaben korrekt! (Under construction)
+    <div class="alert-box">
+        <strong>⚠ HINWEIS:</strong> Diese Seite befindet sich im Aufbau. Noch sind nicht alle Angaben korrekt!
     </div>
 
-    <section class="hero">
-        <h2>Wege zu freierer Entwicklung finden</h2>
-        <p>Lernprobleme, Verhaltensauffälligkeiten oder motorische Unsicherheiten haben oft eine tiefere neurophysiologische Ursache. Die INPP-Methode setzt genau hier an, um Blockaden von Grund auf zu lösen.</p>
-    </section>
-
-    <main class="container">
+    <main>
         <section>
-            <h2 class="section-title">Meine INPP-Förderangebote</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>INPP für Kinder & Jugendliche</h3>
-                    <p>Effektive Unterstützung bei Schulschwierigkeiten, Konzentrations- und Aufmerksamkeitsstörungen (ADS/ADHS), Lese-Rechtschreib-Schwäche (Legasthenie) oder Rechenschwäche (Dyskalkulie).</p>
-                </div>
-                <div class="card">
-                    <h3>INPP für Erwachsene</h3>
-                    <p>Gezielte Hilfestellung bei fortbestehenden neuromotorischen Unreifen, Gleichgewichtsproblemen, Koordinationsschwierigkeiten, erhöhter Stressanfälligkeit oder innerer Unruhe im Alltag.</p>
-                </div>
-                <div class="card">
-                    <h3>Programme für Einrichtungen</h3>
-                    <p>Fachliche Begleitung, Beratung und Betreuung von neuromotorischen Programmen in Schulen, Kindergärten und anderen pädagogischen Einrichtungen.</p>
-                </div>
-            </div>
+            <h2>Leichter leben und lernen</h2>
+            <p><em>„Wir können uns nicht deshalb bewegen, weil unser Gehirn entsprechend entwickelt ist, sondern unser Gehirn ist deshalb so gut entwickelt, weil wir uns bewegen.“ (Daniela Arnold)</em></p>
+            <p>Bewegung ist das Fundament des Lebens und Lernens. Genau darauf basiert das INPP ® -Programm: Die INPP-Methode ist ein Übungsprogramm für Kinder und Erwachsene, bei dem durch speziell entwickelte Bewegungsübungen frühkindliche Reflexe gehemmt und integriert werden und dadurch die natürliche neurologische Entwicklung nachreifen kann und das Nervensystem reguliert wird. Diese neuromotorische Nachreifung schafft eine Grundlage für besseres und leichteres Lern- und Leistungsvermögen in physischen, psychischen und kognitiven Prozessen.</p>
         </section>
 
-        <section style="margin-top: 60px;">
-            <h2 class="section-title">Die INPP®-Methode</h2>
-            <div class="method-block">
-                <h3>Neuromotorische Entwicklungsförderung</h3>
-                <p>Das INPP-Förderprogramm basiert auf einem individuell maßgeschneiderten, häuslichen Bewegungsprogramm. Es zielt darauf ab, noch aktive frühkindliche Reflexe nachträglich zu hemmen und vollständig zu integrieren. Dadurch stärken wir das neurophysiologische Fundament, welches für entspanntes Lernen, ausgeglichenes Verhalten und emotionale Stabilität notwendig ist.</p>
-                <p style="margin-top: 15px;">Vertiefende Informationen auf der offiziellen Homepage: <a href="https://inpp.de" target="_blank" class="method-link">www.inpp.de</a></p>
-            </div>
-        </section>
-    </main>
-    </main>
-
-    <!-- DREISPALtiger FUSSBEREICH NACH BILD-VORLAGE -->
-    <section style="background-color: #f1f1f1; padding: 60px 20px; border-top: 1px solid #e2e8f0; font-size: 15px;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: left;">
+        <!-- Bereich der 3 ausklappbaren Balken -->
+        <section style="margin: 40px 0;">
             
-            <!-- Spalte 1: Behandlungskosten -->
-            <div>
-                <h4 style="color: var(--primary); font-size: 18px; font-weight: 500; margin-bottom: 10px; position: relative;">Behandlungskosten</h4>
-                <div style="width: 40px; height: 2px; background-color: var(--secondary); margin-bottom: 20px;"></div>
-                <p style="color: #4a5568;">Eine detaillierte Aufstellung der Behandlungskosten erhalten Sie nach einem kostenfreien Beratungsgespräch.</p>
+            <!-- Balken 1: Kinder & Jugendliche -->
+            <div class="accordion-item">
+                <button class="accordion-button">INPP für Kinder & Jugendliche</button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Verhalten & Emotionen (ADS, ADHS, Unruhe, Ängstlichkeit, Rückzug, Impulskontrolle):</strong> Wir setzen an den körperlichen Grundlagen für Konzentration an, indem das autonome Nervensystem nachreifen kann und eine innere Stabilität aufgebaut werden kann.</li>
+                            <li><strong>Grob- & Feinmotorik (Gleichgewicht, Koordination):</strong> Bleiben frühkindliche Reflexe aktiv, kämpft das Kind ständig gegen den eigenen Körper. Das Nachholen dieser Entwicklungsschritte verbessert die Körperkoordination, das Gleichgewicht und die Feinmotorik (z.B. eine entspannte Stifthaltung).</li>
+                            <li><strong>Lernen & Schule (LRS / Legasthenie, Dyskalkulie / Rechenschwäche):</strong> Räumliche Orientierung und visuelle Wahrnehmung sind die Basis für Lesen, Schreiben und Rechnen. Das gezielte Bewegungsprogramm schafft das neuronale Fundament, um Buchstaben und Zahlen leichter zu verarbeiten.</li>
+                        </ul>
+                        
+                        <h4>Mein Ansatz: Das INPP®-Programm</h4>
+                        <p>Die INPP®-Methode setzt an der Basis an. Anstatt nur Symptome zu kompensieren oder zu trainieren, geben wir dem Gehirn eine „zweite Chance“, die neuromotorische Entwicklung nachzuholen.</p>
+                        <ul>
+                            <li><strong>Präzise Diagnostik:</strong> In einer ausführlichen Erfassung testen wir den Entwicklungsstand und das Vorhandensein persistierender Restreflexe.</li>
+                            <li><strong>Individuelles Übungsprogramm:</strong> Ihr Kind erhält ein maßgeschneidertes, häusliches Bewegungsprogramm von nur 5 bis 10 Minuten täglich.</li>
+                            <li><strong>Regelmäßige Begleitung:</strong> Alle 6 bis 8 Wochen überprüfen wir die Fortschritte und passen die Übungen exakt an.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Balken 2: Erwachsene -->
+            <div class="accordion-item">
+                <button class="accordion-button">INPP für Erwachsene</button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p><strong>Unterstützung bei:</strong></p>
+                        <ul>
+                            <li><strong>Angst & innerliche Unruhe:</strong> Sie fühlen sich schnell überfordert, erleben unbegründete Ängste oder stehen innerlich ständig unter Strom, ohne zur Ruhe zu kommen.</li>
+                            <li><strong>Starke Auffälligkeiten im Gleichgewicht:</strong> Unsicherheiten bei Bewegungen, Schwindelgefühle, Höhenangst, Reisekrankheit oder das Gefühl, im Raum die Balance zu verlieren.</li>
+                        </ul>
+                        
+                        <h4>Mein Ansatz: Das INPP®-Programm für Erwachsene</h4>
+                        <p>Die INPP®-Methode setzt direkt an der neuronalen Basis an, indem durch gezielte Bewegungen motorischer Basismuster nachgeholt werden und neuronal verankert werden können.</p>
+                        <ul>
+                            <li><strong>Präzise Diagnostik:</strong> In einer ausführlichen Erfassung testen wir den neuromotorischen Entwicklungsstand (Gleichgewicht, Koordination, Aufrichtung des Körpers, visuomotorische Auffälligkeiten, …) und das Vorhandensein persistierender Restreflexe.</li>
+                            <li><strong>Individuelles Übungsprogramm:</strong> Sie erhalten ein maßgeschneidertes, häusliches Bewegungsprogramm von nur 5 bis 10 Minuten täglich.</li>
+                            <li><strong>Regelmäßige Begleitung:</strong> Alle 6 bis 8 Wochen überprüfen wir die Fortschritte und passen die Übungen exakt an.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- Spalte 2: Kontakt -->
-            <div>
-                <h4 style="color: var(--primary); font-size: 18px; font-weight: 500; margin-bottom: 10px;">Kontakt</h4>
-                <div style="width: 40px; height: 2px; background-color: var(--secondary); margin-bottom: 20px;"></div>
-                <ul style="list-style: none; padding: 0; color: #4a5568; display: flex; flex-direction: column; gap: 10px;">
-                    <li style="display: flex; align-items: flex-start; gap: 10px;">
-                        <span>📍</span> 
-                        <span>Uhlenkamp 7, 38536 Meinersen</span>
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 10px;">
-                        <span>📞</span> 
-                        <span><a href="tel:0162000000" style="color: inherit; text-decoration: none;">0162000000</a></span>
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 10px;">
-                        <span>✉️</span> 
-                        <span><a href="mailto:AnjaRebekka@....de" style="color: inherit; text-decoration: none;">AnjaRebekka@....de</a></span>
-                    </li>
-                </ul>
+            <!-- Balken 3: Gruppenprogramm -->
+            <div class="accordion-item">
+                <button class="accordion-button">INPP Gruppenprogramm</button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Begleitung und Durchführung des Bewegungsprogramms im schulischen Kontext</li>
+                            <li>Informationsveranstaltungen und Vorträge</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- Spalte 3: Weiterführende Links -->
-            <div>
-                <h4 style="color: var(--primary); font-size: 18px; font-weight: 500; margin-bottom: 10px;">Weiterführende Links</h4>
-                <div style="width: 40px; height: 2px; background-color: var(--secondary); margin-bottom: 20px;"></div>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                        <span>🔗</span> 
-                        <a href="https://inpp.de" target="_blank" style="color: #4a5568; text-decoration: none; font-weight: 500;">INPP</a>
-                    </li>
-                </ul>
-            </div>
+        </section>
 
+        <!-- Einladendes Fazit / Call to Action -->
+        <div class="cta-box">
+            <h3>Gemeinsam das Fundament stärken</h3>
+            <p>Ob für Ihr Kind oder für Sie selbst: Der Weg zu mehr Leichtigkeit, Konzentration und innerer Balance beginnt oft mit der Bewegung. Lassen Sie uns in einem kostenfreien Beratungsgespräch unverbindlich schauen, wie ich Sie unterstützen kann.</p>
+            <p><strong>Kontaktieren Sie mich gerne telefonisch unter <a href="tel:+491625817613">0162 5817613</a> oder per E-Mail an <a href="mailto:campion.inpp@posteo.de">campion.inpp@posteo.de</a>!</strong></p>
         </div>
-    </section>
 
-    <!-- SEHR DEZENTER RECHTLICHER FOOTER GANZ UNTEN -->
-    <footer style="background-color: var(--dark); color: #a0aec0; text-align: center; padding: 25px 20px;">
-        <p style="font-size: 14px;">&copy; 2026 Praxis Anja le Campion</p>
-        <span style="font-size: 11px; margin-top: 5px; display: block; opacity: 0.7;">
-            <a href="impressum.html" style="color: #a0aec0; text-decoration: none; margin: 0 8px;">Impressum</a> | 
-            <a href="datenschutz.html" style="color: #a0aec0; text-decoration: none; margin: 0 8px;">Datenschutz</a>
-        </span>
+        <section style="margin: 30px 0; text-align: center;">
+            <p>Vertiefende Informationen auf der offiziellen Homepage: <a href="https://inpp.de" target="_blank">www.inpp.de</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>📍 Uhlenkamp 7, 38536 Meinersen | 📞 <a href="tel:+491625817613">0162 5817613</a> | ✉ <a href="mailto:campion.inpp@posteo.de">campion.inpp@posteo.de</a></p>
+        <p>© 2026 Anja le Campion | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
     </footer>
+
+    <script>
+        const accButtons = document.querySelectorAll(".accordion-button");
+
+        accButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                // Schließt andere offene Balken
+                accButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.classList.remove("active");
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // Öffnet/Schließt den aktuellen Balken
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
-
